@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <title>Acme UI Kit — Design System Showcase</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <main class="showcase">
+    <header class="showcase__header">
+      <p class="showcase__brand"><span class="showcase__brand-mark" aria-hidden="true">A</span> Acme UI Kit</p>
+      <button class="button button--secondary" id="theme-toggle" type="button" aria-pressed="false">
+        <span aria-hidden="true">◐</span><span id="theme-toggle-label">Switch to dark</span>
+      </button>
+    </header>
+
+    <section class="showcase__intro" aria-labelledby="page-title">
+      <p class="showcase__eyebrow">Vanilla CSS · BEM · Zero dependencies</p>
+      <h1 class="showcase__title" id="page-title">A thoughtful foundation for better interfaces.</h1>
+      <p class="showcase__description">A small, scalable component library built on two tiers of custom properties. Change the semantic tokens once and every component follows.</p>
+    </section>
+
+    <section class="showcase__section" aria-labelledby="buttons-heading">
+      <h2 class="showcase__section-heading" id="buttons-heading">Buttons</h2>
+      <div class="card">
+        <div class="showcase__stack">
+          <button class="button button--primary" type="button">Primary action</button>
+          <button class="button button--secondary" type="button">Secondary</button>
+          <button class="button button--ghost" type="button">Ghost</button>
+          <button class="button button--danger" type="button">Destructive</button>
+          <button class="button button--primary" type="button" disabled>Disabled</button>
+          <button class="button button--secondary button--small" type="button">Small</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase__section" aria-labelledby="cards-heading">
+      <h2 class="showcase__section-heading" id="cards-heading">Cards</h2>
+      <div class="showcase__grid">
+        <article class="card">
+          <h3 class="card__title">Design tokens</h3>
+          <p class="card__body">Semantic values separate component intent from the underlying palette, making global changes simple.</p>
+          <footer class="card__footer">
+            <span class="badge badge--brand">Foundation</span>
+            <span class="badge">Updated today</span>
+          </footer>
+        </article>
+        <article class="card">
+          <h3 class="card__title">Accessible by default</h3>
+          <p class="card__body">Visible keyboard focus, native controls, and readable status messaging are built into the patterns.</p>
+          <footer class="card__footer">
+            <span class="badge badge--success">Ready</span>
+            <span class="badge badge--warning">Review contrast</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase__section" aria-labelledby="forms-heading">
+      <h2 class="showcase__section-heading" id="forms-heading">Form fields</h2>
+      <div class="showcase__grid">
+        <div class="card showcase__stack showcase__stack--vertical">
+          <label class="field">
+            <span class="field__label">Email address</span>
+            <input class="field__input" type="email" placeholder="you@example.com" autocomplete="email">
+            <span class="field__hint">We’ll only use this for account updates.</span>
+          </label>
+          <label class="field">
+            <span class="field__label">Project name</span>
+            <input class="field__input field__input--success" type="text" value="" aria-describedby="project-success">
+            <span class="field__message field__message--success" id="project-success">Looks good.</span>
+          </label>
+        </div>
+        <div class="card showcase__stack showcase__stack--vertical">
+          <label class="field">
+            <span class="field__label">Workspace URL</span>
+            <input class="field__input field__input--error" type="url" value="" aria-invalid="true" aria-describedby="url-error">
+            <span class="field__message field__message--error" id="url-error">Enter a valid workspace URL.</span>
+          </label>
+          <label class="field">
+            <span class="field__label">Account ID</span>
+            <input class="field__input" type="text" value="AC-2048" disabled>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase__section" aria-labelledby="alerts-heading">
+      <h2 class="showcase__section-heading" id="alerts-heading">Alerts</h2>
+      <div class="showcase__stack showcase__stack--vertical">
+        <div class="alert alert--success" role="status">
+          <div class="alert__content"><strong class="alert__title">Changes saved</strong><p class="alert__body">Your preferences have been updated successfully.</p></div>
+        </div>
+        <div class="alert alert--warning" role="status">
+          <div class="alert__content"><strong class="alert__title">Action recommended</strong><p class="alert__body">Add a recovery email to help protect your account.</p></div>
+          <button class="alert__dismiss" type="button" aria-label="Dismiss recommendation">×</button>
+        </div>
+        <div class="alert alert--danger" role="alert">
+          <div class="alert__content"><strong class="alert__title">Could not complete request</strong><p class="alert__body">Check your connection and try again.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase__section" aria-labelledby="dialog-heading">
+      <h2 class="showcase__section-heading" id="dialog-heading">Dialog</h2>
+      <div class="card showcase__stack">
+        <button class="button button--primary" id="open-dialog" type="button">Open dialog</button>
+        <span class="showcase__muted">Uses the native accessible dialog element.</span>
+      </div>
+    </section>
+
+    <footer class="showcase__footer">Acme UI Kit · Indigo + Slate · Light and dark themes</footer>
+  </main>
+
+  <dialog class="dialog" id="demo-dialog" aria-labelledby="dialog-title">
+    <div class="dialog__content">
+      <header class="dialog__header">
+        <h2 class="dialog__title" id="dialog-title">A native dialog</h2>
+        <button class="button button--ghost button--small" id="close-dialog-icon" type="button" aria-label="Close dialog">×</button>
+      </header>
+      <p class="dialog__body">The browser manages focus and Escape-to-close behavior. The component styling uses the same semantic tokens as the rest of the library.</p>
+      <div class="dialog__actions">
+        <button class="button button--secondary" id="cancel-dialog" type="button">Cancel</button>
+        <button class="button button--primary" id="confirm-dialog" type="button">Got it</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.getElementById("theme-toggle");
+      const themeLabel = document.getElementById("theme-toggle-label");
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const dialog = document.getElementById("demo-dialog");
+
+      const setTheme = (theme) => {
+        root.dataset.theme = theme;
+        const isDark = theme === "dark";
+        themeButton.setAttribute("aria-pressed", String(isDark));
+        themeLabel.textContent = isDark ? "Switch to light" : "Switch to dark";
+        themeMeta.content = isDark ? "#0f172a" : "#f8fafc";
+      };
+
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem("acme-ui-theme");
+      } catch (error) {
+        console.warn("Theme preference could not be read from storage.", error);
+      }
+      setTheme(savedTheme === "dark" ? "dark" : "light");
+
+      themeButton.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+        setTheme(nextTheme);
+        try {
+          localStorage.setItem("acme-ui-theme", nextTheme);
+        } catch (error) {
+          console.warn("Theme preference could not be saved.", error);
+        }
+      });
+
+      document.getElementById("open-dialog").addEventListener("click", () => dialog.showModal());
+      document.getElementById("close-dialog-icon").addEventListener("click", () => dialog.close());
+      document.getElementById("cancel-dialog").addEventListener("click", () => dialog.close());
+      document.getElementById("confirm-dialog").addEventListener("click", () => dialog.close());
+
+      document.querySelectorAll(".alert__dismiss").forEach((button) => {
+        button.addEventListener("click", () => button.closest(".alert").remove());
+      });
+    })();
+  </script>
+</body>
+</html>
